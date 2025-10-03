@@ -1,0 +1,21 @@
+{
+    "Auth": {
+        "name": "الاسم",
+        "email": "البريد الكتروني",
+        "password": "كلمه المرور",
+        "confirmPassword": "تاكيد كلمه المرور",
+        "login": "تسجيل دخول",
+        "register": "تسجيل",
+        "ForgotPassword": "نسيت كلمه المرور"
+    },
+    "home_page": "الرئيسيه",
+    "Navscreen": {
+        "explore": "ستكشف",
+        "travel": "السفر",
+        "techonlogy": "تكنولوجيا",
+        "entertainment": "ترفيه",
+        "business": "العمال",
+        "cancel": "الغاء",
+        "search_result": "نتيجه البحث"
+    }
+}

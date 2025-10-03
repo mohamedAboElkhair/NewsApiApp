@@ -1,0 +1,21 @@
+{
+    "Auth": {
+        "name": "Name",
+        "email": "Email",
+        "password": "Password",
+        "confirmPassword": "Confirm Password",
+        "login": "Login",
+        "register": "Register",
+        "ForgotPassword": "Forgot Password"
+    },
+    "home_page": "Home",
+    "Navscreen": {
+        "explore": "Explore",
+        "travel": "Travel",
+        "techonlogy": "Techonlogy",
+        "business": "Business",
+        "entertainment": "Entertainment",
+        "cancel": "Cancel",
+        "search_result": "Search Result"
+    }
+}
