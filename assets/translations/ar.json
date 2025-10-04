@@ -17,5 +17,8 @@
         "business": "العمال",
         "cancel": "الغاء",
         "search_result": "نتيجه البحث"
+    },
+    "Resultsdate":{
+        "No_results":"لا توجد نتائج"
     }
 }

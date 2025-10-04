@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:localization_s13/core/networking/dio_helper.dart';
 import 'package:localization_s13/core/routing/router_generation_config.dart';
 import 'package:localization_s13/generated/codegen_loader.g.dart';
 import 'package:localization_s13/generated/locale_keys.g.dart';
@@ -9,7 +10,7 @@ import 'package:localization_s13/generated/locale_keys.g.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
-
+  DioHelper.initDio();
   runApp(
     EasyLocalization(
       supportedLocales: [Locale('en'), Locale('ar')],
