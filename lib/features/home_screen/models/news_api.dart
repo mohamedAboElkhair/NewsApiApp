@@ -1,15 +1,15 @@
-class TopHeadLinesModel {
+class NewsModel {
     String? status;
     int? totalResults;
     List<Article>? articles;
 
-    TopHeadLinesModel({
+    NewsModel({
         this.status,
         this.totalResults,
         this.articles,
     });
 
-    factory TopHeadLinesModel.fromJson(Map<String, dynamic> json) => TopHeadLinesModel(
+    factory NewsModel.fromJson(Map<String, dynamic> json) => NewsModel(
         status: json["status"],
         totalResults: json["totalResults"],
         articles: json["articles"] == null ? [] : List<Article>.from(json["articles"]!.map((x) => Article.fromJson(x))),

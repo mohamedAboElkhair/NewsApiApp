@@ -5,14 +5,15 @@ import 'package:localization_s13/core/styles/App_text_style.dart';
 
 class CustomCategoryItemWidget extends StatelessWidget {
   final String? title;
-  const CustomCategoryItemWidget({super.key, this.title});
+  final Function() onTap;
+  const CustomCategoryItemWidget({super.key, this.title, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(right: 16),
       child: InkWell(
-        onTap: () {},
+        onTap: onTap,
         child: Container(
           margin: EdgeInsets.only(right: 16.w),
           //padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 6.h),

@@ -1,17 +1,19 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:localization_s13/core/constants/app_constants.dart';
 import 'package:localization_s13/core/networking/api_endpoints.dart';
 import 'package:localization_s13/core/networking/dio_helper.dart';
+import 'package:localization_s13/core/routing/app_routes.dart';
 import 'package:localization_s13/core/styles/App_colors.dart';
 import 'package:localization_s13/core/styles/App_text_style.dart';
 import 'package:localization_s13/core/widgets/space_widgets.dart.dart';
-import 'package:localization_s13/features/home_screen/models/top_headlines_model.dart';
+import 'package:localization_s13/features/home_screen/models/news_api.dart';
 import 'package:localization_s13/features/home_screen/widgets/article_card_widget.dart';
 import 'package:localization_s13/features/home_screen/widgets/custom_category_item_widget.dart';
 import 'package:localization_s13/features/home_screen/widgets/top_headline_item_widget.dart';
-import 'package:localization_s13/features/services/home_screen_services.dart';
+import 'package:localization_s13/features/home_screen/services/home_screen_services.dart';
 import 'package:localization_s13/generated/locale_keys.g.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -31,6 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         backgroundColor: AppColors.appBarColor,
         toolbarHeight: 68.h,
         actions: [
@@ -60,8 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
             return Center(child: Text(snapshot.error.toString()));
           }
           if (snapshot.hasData) {
-            TopHeadLinesModel topHeadLinesModel =
-                snapshot.data! as TopHeadLinesModel;
+            NewsModel topHeadLinesModel = snapshot.data! as NewsModel;
             if (topHeadLinesModel.totalResults == 0) {
               return Center(
                 child: Text(LocaleKeys.Resultsdate_No_results.tr()),
@@ -82,16 +84,41 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         CustomCategoryItemWidget(
                           title: LocaleKeys.Navscreen_travel.tr(),
+                          onTap: () {
+                            GoRouter.of(context).pushNamed(
+                              AppRoutes.searchResultScreen,
+                              extra: LocaleKeys.Navscreen_travel.tr(),
+                            );
+                          },
                         ),
 
                         CustomCategoryItemWidget(
                           title: LocaleKeys.Navscreen_techonlogy.tr(),
+
+                          onTap: () {
+                            GoRouter.of(context).pushNamed(
+                              AppRoutes.searchResultScreen,
+                              extra: LocaleKeys.Navscreen_techonlogy.tr(),
+                            );
+                          },
                         ),
                         CustomCategoryItemWidget(
                           title: LocaleKeys.Navscreen_entertainment.tr(),
+                          onTap: () {
+                            GoRouter.of(context).pushNamed(
+                              AppRoutes.searchResultScreen,
+                              extra: LocaleKeys.Navscreen_entertainment.tr(),
+                            );
+                          },
                         ),
                         CustomCategoryItemWidget(
                           title: LocaleKeys.Navscreen_business.tr(),
+                          onTap: () {
+                            GoRouter.of(context).pushNamed(
+                              AppRoutes.searchResultScreen,
+                              extra: LocaleKeys.Navscreen_entertainment.tr(),
+                            );
+                          },
                         ),
                       ],
                     ),

@@ -31,6 +31,7 @@ class ArticleCardWidget extends StatelessWidget {
               SizedBox(
                 width: 238.w,
                 child: Text(
+                  maxLines: 2,
                   title ?? "",
                   style: AppTextStyle.black16Medium.copyWith(
                     fontWeight: FontWeight.bold,
@@ -48,13 +49,16 @@ class ArticleCardWidget extends StatelessWidget {
               ),
             ],
           ),
-          CachedNetworkImage(
-            fit: BoxFit.fill,
-            width: 122,
-            height: 80.h,
-            imageUrl:
-                imageUrl ??
-                "https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2021/10/breaking-news-india-tv-1632358552-1633394891.jpg",
+          ClipRRect(
+            borderRadius: BorderRadius.circular(5.r),
+            child: CachedNetworkImage(
+              fit: BoxFit.fill,
+              width: 122,
+              height: 80.h,
+              imageUrl:
+                  imageUrl ??
+                  "https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2021/10/breaking-news-india-tv-1632358552-1633394891.jpg",
+            ),
           ),
         ],
       ),
