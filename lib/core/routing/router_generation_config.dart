@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:localization_s13/core/routing/app_routes.dart';
 import 'package:localization_s13/features/home_screen/home_screen.dart';
+import 'package:localization_s13/features/home_screen/models/news_api.dart';
+import 'package:localization_s13/features/home_screen/news_detalis_screen.dart';
 import 'package:localization_s13/features/search_result_screen/search_result_screen.dart';
 
 class RouterGenerationConfig {
@@ -17,7 +19,7 @@ class RouterGenerationConfig {
         path: AppRoutes.searchScreen,
         name: AppRoutes.searchScreen,
         builder: (context, state) {
-       //   String query = state.extra as String;
+          //   String query = state.extra as String;
           return Container();
         },
       ),
@@ -30,9 +32,12 @@ class RouterGenerationConfig {
         },
       ),
       GoRoute(
-        path: AppRoutes.articleNewsScreen,
-        name: AppRoutes.articleNewsScreen,
-        builder: (context, state) => Container(),
+        path: AppRoutes.newsDetalisScreen,
+        name: AppRoutes.newsDetalisScreen,
+        builder: (context, state) {
+          Article article = state.extra as Article;
+          return NewsDetalisScreen(article: article);
+        },
       ),
 
       //      GoRoute(

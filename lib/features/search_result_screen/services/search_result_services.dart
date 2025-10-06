@@ -10,12 +10,14 @@ class SearchResultServices {
     try {
       final Response response = await DioHelper.getRequest(
         endPoint: ApiEndpoints.searchEndpoint,
-        query: {"apiKey": AppConstants.apiKey, "q": query},
+        query: {
+          "apiKey": AppConstants.apiKey,
+          "q": query,
+          "language": AppConstants.lang,
+        },
       );
       if (response.statusCode == 200) {
-        NewsModel topHeadLinesModel = NewsModel.fromJson(
-          response.data,
-        );
+        NewsModel topHeadLinesModel = NewsModel.fromJson(response.data);
         // log(topHeadLinesModel.totalResults.toString());
         return topHeadLinesModel;
       }
@@ -24,5 +26,4 @@ class SearchResultServices {
       return Future.error(e.toString());
     }
   }
-
 }

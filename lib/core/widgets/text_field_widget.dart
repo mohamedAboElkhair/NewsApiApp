@@ -11,6 +11,8 @@ class TextFieldWidget extends StatelessWidget {
   final TextEditingController? controller;
   final String? Function(String?)? validator;
   final int? maxLines;
+  final double? height;
+  final Function(String)? onFieldSumitted;
   const TextFieldWidget({
     super.key,
     this.hintText,
@@ -21,16 +23,20 @@ class TextFieldWidget extends StatelessWidget {
     this.validator,
     this.keyBoardType,
     this.maxLines,
+    this.height,
+    this.onFieldSumitted,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: width ?? 331.w,
+      height: height ?? 80,
       child: TextFormField(
         maxLines: maxLines ?? 1,
         controller: controller ?? TextEditingController(),
         keyboardType: keyBoardType ?? TextInputType.text,
+        onFieldSubmitted: onFieldSumitted,
         validator: validator,
         cursorColor: AppColors.primaryColor,
         autofocus: false,

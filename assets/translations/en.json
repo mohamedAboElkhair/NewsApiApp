@@ -19,6 +19,7 @@
         "search_result": "Search Result"
     },
     "Resultsdate": {
-        "No_results": "No Results"
+        "No_results": "No Results",
+        "search": "Search"
     }
 }

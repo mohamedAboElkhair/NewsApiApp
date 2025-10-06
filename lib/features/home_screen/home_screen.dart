@@ -12,6 +12,7 @@ import 'package:localization_s13/core/widgets/space_widgets.dart.dart';
 import 'package:localization_s13/features/home_screen/models/news_api.dart';
 import 'package:localization_s13/features/home_screen/widgets/article_card_widget.dart';
 import 'package:localization_s13/features/home_screen/widgets/custom_category_item_widget.dart';
+import 'package:localization_s13/features/home_screen/widgets/search_text_field_widge.dart';
 import 'package:localization_s13/features/home_screen/widgets/top_headline_item_widget.dart';
 import 'package:localization_s13/features/home_screen/services/home_screen_services.dart';
 import 'package:localization_s13/generated/locale_keys.g.dart';
@@ -37,10 +38,17 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: AppColors.appBarColor,
         toolbarHeight: 68.h,
         actions: [
+          SearchTextFieldWidge(),
           IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.search),
-            color: AppColors.primaryColor,
+            onPressed: () {
+              if (context.locale.languageCode == "en") {
+                context.setLocale(Locale("ar"));
+              } else {
+                context.setLocale(Locale("en"));
+              }
+              AppConstants.lang = context.locale.languageCode;
+            },
+            icon: Icon(Icons.language),
           ),
         ],
         title: Text(
@@ -150,12 +158,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       itemBuilder: (context, index) {
                         Article article = topHeadLinesModel.articles![index];
                         return ArticleCardWidget(
-                          title: article.title,
-                          imageUrl: article.urlToImage,
-                          authName: article.author,
-                          date: DateFormat(
-                            'yyyy-MM-dd - kk:mm',
-                          ).format(article.publishedAt!),
+                          article: article,
+                          // title: article.title,
+                          // imageUrl: article.urlToImage,
+                          // authName: article.author,
+                          // date: DateFormat(
+                          //   'yyyy-MM-dd - kk:mm',
+                          // ).format(article.publishedAt!),
                         );
                       },
                     ),

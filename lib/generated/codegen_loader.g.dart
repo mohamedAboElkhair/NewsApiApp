@@ -35,7 +35,8 @@ class CodegenLoader extends AssetLoader{
     "search_result": "نتيجه البحث"
   },
   "Resultsdate": {
-    "No_results": "لا توجد نتائج"
+    "No_results": "لا توجد نتائج",
+    "search": "بحث"
   }
 };
 static const Map<String,dynamic> _en = {
@@ -59,7 +60,8 @@ static const Map<String,dynamic> _en = {
     "search_result": "Search Result"
   },
   "Resultsdate": {
-    "No_results": "No Results"
+    "No_results": "No Results",
+    "search": "Search"
   }
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"ar": _ar, "en": _en};

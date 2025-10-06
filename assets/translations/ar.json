@@ -18,7 +18,8 @@
         "cancel": "الغاء",
         "search_result": "نتيجه البحث"
     },
-    "Resultsdate":{
-        "No_results":"لا توجد نتائج"
+    "Resultsdate": {
+        "No_results": "لا توجد نتائج",
+        "search": "بحث"
     }
 }

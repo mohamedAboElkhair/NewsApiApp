@@ -21,6 +21,7 @@ abstract class  LocaleKeys {
   static const Navscreen_search_result = 'Navscreen.search_result';
   static const Navscreen = 'Navscreen';
   static const Resultsdate_No_results = 'Resultsdate.No_results';
+  static const Resultsdate_search = 'Resultsdate.search';
   static const Resultsdate = 'Resultsdate';
 
 }
